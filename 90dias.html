@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feliz 90 dias!!!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --bg1:#0b0b0b;
+      --bg2:#1a0f1f;
+      --ink:#e6e0e0;
+      --rose:#7a4357;
+      --rose-dark:#5a1a2f;
+      --accent:#d4b8c2;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 700px at 50% -10%, #20121f88, transparent 70%),
+                  linear-gradient(to bottom, var(--bg1), var(--bg2));
+      color:var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      text-align:center;
+      overflow-x:hidden;
+    }
+
+    /* Moldura da carta */
+    .page{
+      max-width: 920px;
+      margin: 48px auto 96px;
+      padding: 40px 28px 56px;
+      background: #0e0b0dCC;
+      border: 1px solid #2b1821;
+      outline: 1px solid #38202a;
+      outline-offset: 6px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.5), inset 0 0 60px rgba(90,26,47,.15);
+    }
+
+    h1{
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: clamp(28px, 3.2vw, 42px);
+    }
+    h2{
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #c9b0b9;
+      margin: 0 0 24px;
+      font-size: clamp(18px, 2vw, 22px);
+    }
+    p.lead{
+      width:min(820px, 92%);
+      margin: 22px auto 30px;
+      line-height:1.75;
+      font-size: clamp(16px,1.6vw,19px);
+    }
+
+    .actions{
+      margin-top: 16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+    }
+    button{
+      background: #220a14;
+      border: 1px solid var(--rose);
+      color: var(--ink);
+      padding: 12px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform .15s ease, background .25s ease, border-color .25s ease;
+      letter-spacing:.2px;
+    }
+    button:hover{ background: var(--rose-dark); transform: translateY(-1px); }
+    button:active{ transform: translateY(0); }
+
+    .reveal{
+      display:none;
+      animation: fadeIn .9s ease forwards;
+      margin: 18px auto 6px;
+      width:min(820px, 92%);
+      line-height:1.75;
+      font-size: clamp(16px,1.6vw,19px);
+      color:#e9e3e3;
+    }
+    @keyframes fadeIn{ from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none} }
+
+    /* Imagens */
+    .figure{
+      margin:14px auto 10px;
+    }
+    .frame{
+      display:inline-block;
+      background:#111;
+      padding:8px;
+      border: 1px solid #2b2b2b;
+      box-shadow: 0 8px 18px rgba(0,0,0,.55);
+    }
+    .frame img{
+      display:block;
+      max-width: min(92vw, 680px);
+      height:auto;
+      border:2px solid var(--rose);
+      border-radius:4px;
+    }
+    .caption{
+      font-size: .98rem;
+      color:#d9cfd3;
+      margin-top:10px;
+      opacity:.9;
+    }
+
+    /* Petálas decorativas (não-emoji) */
+    .petal{
+      position: fixed;
+      top: -12px;
+      left: 0;
+      font-size: 18px;
+      color: var(--rose);
+      opacity:.8;
+      animation: fall linear forwards;
+      pointer-events:none;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.35));
+      will-change: transform, opacity;
+    }
+    @keyframes fall{
+      0% { transform: translateY(-12px) rotate(0deg); opacity:.85;}
+      100%{ transform: translateY(105vh) rotate(360deg); opacity:.15;}
+    }
+
+    footer{
+      margin-top:40px;
+      font-size: .95rem;
+      color:#cdbfc5;
+    }
+    a.link{
+      color:var(--accent);
+      text-decoration:none;
+      border-bottom:1px dashed #a88593;
+    }
+    a.link:hover{ border-bottom-color: transparent; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>To the love of my life, Arthur:</h1>
+    <h2>Feliz 90 dias</h2>
+
+    <p class="lead">
+      Você é minha luz, o amor que aquece meu coração, a esperança que preenche meu âmago com a mais doce felicidade
+      e tudo o que desejo é que esses 90 dias se tornem 90 eternidades ao seu lado. Eu te amo, Arthur.
+    </p>
+
+    <div class="actions">
+      <button onclick="show('msg1')">A primeira revelação</button>
+      <button onclick="show('msg2')">A segunda revelação</button>
+      <button onclick="show('msg3')">Nossa primeira recordação</button>
+      <button onclick="show('msg4')">A canção</button>
+      <button onclick="show('msg5')">Nossa Jornada</button>
+    </div>
+
+    <!-- 1 -->
+    <div id="msg1" class="reveal">
+      Em seus olhos encontrei abrigo, e em seu toque, a certeza de que eu havia encontrado o amor da minha vida.
+    </div>
+
+    <!-- 2 -->
+    <div id="msg2" class="reveal">
+      Prometo de corpo, mente e alma, prometo pela minha vida e todas as forças que habitam em meu ser,
+      te fazer o homem mais feliz de toda a história, te amando com todo o meu coração e te adorando
+      como a mais apaixonada devota que sou por ti.
+    </div>
+
+    <!-- 3: foto destaque -->
+    <div id="msg3" class="reveal figure">
+      <span class="frame">
+        <img
+          src="C:\Users\roscf\OneDrive\Documentos\90dias\IMG20250531215643[1].jpg.jpg" width="300" height="200"
+          alt="Nós dois — a foto do coração no espelho"
+          title="Nós dois"
+        />
+      </span>
+      <div class="caption">
+        Esta imagem guarda mais que um momento: guarda a prova de que duas almas destinadas se reconheceram.
+      </div>
+    </div>
+
+    <!-- 4: música -->
+    <div id="msg4" class="reveal">
+      Dedico a você esta canção que ecoa meu coração:
+      <br />
+      <a class="link" href="https://open.spotify.com/intl-pt/album/3kVGhOkgwIS2S0Gf1El92G" target="_blank" rel="noopener">
+        Muse — Can't Take My Eyes Off You
+      </a>
+    </div>
+
+    <!-- 5: colagem polaroid -->
+    <div id="msg5" class="reveal figure">
+      <span class="frame">
+        <img
+          src="C:\Users\roscf\OneDrive\Documentos\90dias\Beige Minimalist Aesthetic Airport Mood Photo Collage.png" width="500" height="400"
+          alt="Nossa jornada até o momento, repleta de aventuras e memórias preciosas."
+          title="Nossas memórias"
+        />
+      </span>
+      <div class="caption">
+        Cada registro é um capítulo — e eu quero todos os próximos ao seu lado.
+      </div>
+    </div>
+
+    <footer>
+      Feito por mim, para você. Hoje e sempre. De Melissa para Arthur <3
+    </footer>
+  </div>
+
+  <script>
+    function show(id){
+      document.getElementById(id).style.display = 'block';
+      // rola suavemente até a seção aberta
+      document.getElementById(id).scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
+    // Pétalas caindo (caracter não-emoji)
+    const glyphs = ["❦","❧","❃","✶"];
+    function dropPetal(){
+      const p = document.createElement('div');
+      p.className = 'petal';
+      p.textContent = glyphs[Math.floor(Math.random()*glyphs.length)];
+      p.style.left = Math.random()*100 + 'vw';
+      const d = 5 + Math.random()*6;          // duração
+      const s = .8 + Math.random()*0.6;       // escala
+      p.style.animationDuration = d + 's';
+      p.style.transform = 'scale('+s+')';
+      document.body.appendChild(p);
+      setTimeout(()=> p.remove(), d*1000 + 200);
+    }
+    setInterval(dropPetal, 650);
+  </script>
+</body>
+</html>
